@@ -1,0 +1,439 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript">
+
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-90545585-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>torchvision.datasets.mnist &mdash; Torchvision master documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" type="text/css" />
+  
+    <link rel="stylesheet" href="../../../_static/css/pytorch_theme.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="Index"
+              href="../../../genindex.html"/>
+        <link rel="search" title="Search" href="../../../search.html"/>
+    <link rel="top" title="Torchvision master documentation" href="../../../index.html"/>
+        <link rel="up" title="torchvision" href="../../torchvision.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html">
+          
+
+          
+            
+            <img src="../../../_static/pytorch-logo-dark.svg" class="logo" />
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                master (0.1.9 )
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Package Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../datasets.html">Datasets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#mnist">MNIST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#coco">COCO</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../datasets.html#captions">Captions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../datasets.html#detection">Detection</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#lsun">LSUN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#imagefolder">ImageFolder</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#imagenet-12">Imagenet-12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#cifar">CIFAR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#stl10">STL10</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#svhn">SVHN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../datasets.html#phototour">PhotoTour</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../models.html">Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#id1">Alexnet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#id2">VGG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#id3">ResNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#id4">SqueezeNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#densetnet">DensetNet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../models.html#inception-v3">Inception v3</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../transforms.html">Transforms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../transforms.html#transforms-on-pil-image">Transforms on PIL Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../transforms.html#transforms-on-torch-tensor">Transforms on torch.*Tensor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../transforms.html#conversion-transforms">Conversion Transforms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../transforms.html#generic-transforms">Generic Transforms</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utils</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">Torchvision</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+          <li><a href="../../torchvision.html">torchvision</a> &raquo;</li>
+      
+    <li>torchvision.datasets.mnist</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for torchvision.datasets.mnist</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">torch.utils.data</span> <span class="k">as</span> <span class="nn">data</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="k">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">os.path</span>
+<span class="kn">import</span> <span class="nn">errno</span>
+<span class="kn">import</span> <span class="nn">torch</span>
+<span class="kn">import</span> <span class="nn">codecs</span>
+
+
+<div class="viewcode-block" id="MNIST"><a class="viewcode-back" href="../../../datasets.html#torchvision.datasets.MNIST">[docs]</a><span class="k">class</span> <span class="nc">MNIST</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">Dataset</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;`MNIST &lt;http://yann.lecun.com/exdb/mnist/&gt;`_ Dataset.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        root (string): Root directory of dataset where ``processed/training.pt``</span>
+<span class="sd">            and  ``processed/test.pt`` exist.</span>
+<span class="sd">        train (bool, optional): If True, creates dataset from ``training.pt``,</span>
+<span class="sd">            otherwise from ``test.pt``.</span>
+<span class="sd">        download (bool, optional): If true, downloads the dataset from the internet and</span>
+<span class="sd">            puts it in root directory. If dataset is already downloaded, it is not</span>
+<span class="sd">            downloaded again.</span>
+<span class="sd">        transform (callable, optional): A function/transform that  takes in an PIL image</span>
+<span class="sd">            and returns a transformed version. E.g, ``transforms.RandomCrop``</span>
+<span class="sd">        target_transform (callable, optional): A function/transform that takes in the</span>
+<span class="sd">            target and transforms it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">raw_folder</span> <span class="o">=</span> <span class="s1">&#39;raw&#39;</span>
+    <span class="n">processed_folder</span> <span class="o">=</span> <span class="s1">&#39;processed&#39;</span>
+    <span class="n">training_file</span> <span class="o">=</span> <span class="s1">&#39;training.pt&#39;</span>
+    <span class="n">test_file</span> <span class="o">=</span> <span class="s1">&#39;test.pt&#39;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">root</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">target_transform</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="o">=</span> <span class="n">transform</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">target_transform</span> <span class="o">=</span> <span class="n">target_transform</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train</span> <span class="o">=</span> <span class="n">train</span>  <span class="c1"># training set or test set</span>
+
+        <span class="k">if</span> <span class="n">download</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">download</span><span class="p">()</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_exists</span><span class="p">():</span>
+            <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">&#39;Dataset not found.&#39;</span> <span class="o">+</span>
+                               <span class="s1">&#39; You can use download=True to download it&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">train_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">training_file</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">test_data</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_labels</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">load</span><span class="p">(</span>
+                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_file</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">index</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            index (int): Index</span>
+
+<span class="sd">        Returns:</span>
+<span class="sd">            tuple: (image, target) where target is index of the target class.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">:</span>
+            <span class="n">img</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_data</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_labels</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">img</span><span class="p">,</span> <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_data</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_labels</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+
+        <span class="c1"># doing this so that it is consistent with all other datasets</span>
+        <span class="c1"># to return a PIL Image</span>
+        <span class="n">img</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">numpy</span><span class="p">(),</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;L&#39;</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_transform</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">target_transform</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">img</span><span class="p">,</span> <span class="n">target</span>
+
+    <span class="k">def</span> <span class="nf">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">train</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">train_data</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">test_data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_check_exists</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">training_file</span><span class="p">))</span> <span class="ow">and</span> \
+            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_file</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Download the MNIST data if it doesn&#39;t exist in processed_folder already.&quot;&quot;&quot;</span>
+        <span class="kn">from</span> <span class="nn">six.moves</span> <span class="k">import</span> <span class="n">urllib</span>
+        <span class="kn">import</span> <span class="nn">gzip</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_check_exists</span><span class="p">():</span>
+            <span class="k">return</span>
+
+        <span class="c1"># download files</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_folder</span><span class="p">))</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">OSError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">errno</span> <span class="o">==</span> <span class="n">errno</span><span class="o">.</span><span class="n">EEXIST</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">raise</span>
+
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">urls</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Downloading &#39;</span> <span class="o">+</span> <span class="n">url</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+            <span class="n">filename</span> <span class="o">=</span> <span class="n">url</span><span class="o">.</span><span class="n">rpartition</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_folder</span><span class="p">,</span> <span class="n">filename</span><span class="p">)</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+                <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_path</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">out_f</span><span class="p">,</span> \
+                    <span class="n">gzip</span><span class="o">.</span><span class="n">GzipFile</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">zip_f</span><span class="p">:</span>
+                <span class="n">out_f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">zip_f</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+            <span class="n">os</span><span class="o">.</span><span class="n">unlink</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+
+        <span class="c1"># process and save as torch files</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Processing...&#39;</span><span class="p">)</span>
+
+        <span class="n">training_set</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">read_image_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_folder</span><span class="p">,</span> <span class="s1">&#39;train-images-idx3-ubyte&#39;</span><span class="p">)),</span>
+            <span class="n">read_label_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_folder</span><span class="p">,</span> <span class="s1">&#39;train-labels-idx1-ubyte&#39;</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="n">test_set</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">read_image_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_folder</span><span class="p">,</span> <span class="s1">&#39;t10k-images-idx3-ubyte&#39;</span><span class="p">)),</span>
+            <span class="n">read_label_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">raw_folder</span><span class="p">,</span> <span class="s1">&#39;t10k-labels-idx1-ubyte&#39;</span><span class="p">))</span>
+        <span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">training_file</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">training_set</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">processed_folder</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">test_file</span><span class="p">),</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">test_set</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
+
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Done!&#39;</span><span class="p">)</span></div>
+
+
+<span class="k">class</span> <span class="nc">FashionMNIST</span><span class="p">(</span><span class="n">MNIST</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;`Fashion MNIST &lt;https://github.com/zalandoresearch/fashion-mnist&gt;`_ Dataset.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">urls</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-images-idx3-ubyte.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/train-labels-idx1-ubyte.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-images-idx3-ubyte.gz&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;http://fashion-mnist.s3-website.eu-central-1.amazonaws.com/t10k-labels-idx1-ubyte.gz&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span> <span class="nf">get_int</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">codecs</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="s1">&#39;hex&#39;</span><span class="p">),</span> <span class="mi">16</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">parse_byte</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">ord</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">b</span>
+
+
+<span class="k">def</span> <span class="nf">read_label_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">get_int</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2049</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">parse_byte</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">:]]</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span> <span class="o">==</span> <span class="n">length</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">LongTensor</span><span class="p">(</span><span class="n">labels</span><span class="p">)</span>
+
+
+<span class="k">def</span> <span class="nf">read_image_file</span><span class="p">(</span><span class="n">path</span><span class="p">):</span>
+    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+        <span class="k">assert</span> <span class="n">get_int</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="mi">2051</span>
+        <span class="n">length</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">8</span><span class="p">])</span>
+        <span class="n">num_rows</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">8</span><span class="p">:</span><span class="mi">12</span><span class="p">])</span>
+        <span class="n">num_cols</span> <span class="o">=</span> <span class="n">get_int</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">12</span><span class="p">:</span><span class="mi">16</span><span class="p">])</span>
+        <span class="n">images</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">idx</span> <span class="o">=</span> <span class="mi">16</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">length</span><span class="p">):</span>
+            <span class="n">img</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">images</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_rows</span><span class="p">):</span>
+                <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="n">img</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_cols</span><span class="p">):</span>
+                    <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parse_byte</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">idx</span><span class="p">]))</span>
+                    <span class="n">idx</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">images</span><span class="p">)</span> <span class="o">==</span> <span class="n">length</span>
+        <span class="k">return</span> <span class="n">torch</span><span class="o">.</span><span class="n">ByteTensor</span><span class="p">(</span><span class="n">images</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Torch Contributors.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'master',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
